@@ -1,15 +1,16 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {useParams} from "react-router-dom"
+import {useSelector, shallowEqual} from "react-redux"
 import "./ItemCard.css"
 
-function ItemCard({ id,
-  name,
-  price,
-  description,
-  image_url,
-  AddItemCart,
-  RemoveItemCart }) {
+function ItemDetailPage({AddItemCart, RemoveItemCart}) {
 
+  const {id} = useParams();
+  
+  const products = useSelector(st => st.products, shallowEqual);
+
+  const {name, image_url, price, description} = products[id];
+  
   const handleAddItem = evt => { AddItemCart(id) };
   const handleRemoveItem = evt => { RemoveItemCart(id) };
 
@@ -17,13 +18,13 @@ function ItemCard({ id,
     <div className="itemArea">
       <div className="itemCard">
         <div>
-      <Link to={`/products/${id}`}>
           {name.toUpperCase()}
-      </Link>
         </div>
         <img alt={name} src={image_url}></img>
         <div>
           ${price}
+          <br/>
+          {description}
           <div>
             <button className="addButton" name={id} onClick={handleAddItem}>
               Add To Cart
@@ -38,4 +39,4 @@ function ItemCard({ id,
   )
 }
 
-export default ItemCard;
+export default ItemDetailPage;

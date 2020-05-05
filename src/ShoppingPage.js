@@ -1,30 +1,13 @@
 import React, {useState} from "react";
-import { useSelector, useDispatch, shallowEqual} from "react-redux";
 import ItemCard from "./ItemCard"
 import "./ShoppingPage.css"
-import uuidv4 from "uuid/v4";
-import { addProduct, removeProduct } from "./actions";
+
 
 //TODO: TIPS FROM JOEL;PLURAL THINGS refer often to ARRAYS, be careful wtih variable names
 //structures should have obvious names; products and shopping cart do not describe what variables are
 
-function ShoppingPage() {
-  const products = useSelector(st => st.products, shallowEqual);
-  const shoppingCart = useSelector(st => st.shoppingCart, shallowEqual);
-  const CartTotal = useSelector(st => st.CartTotal);
-  const dispatch = useDispatch();
-
-  console.log(shoppingCart)
-  console.log(CartTotal)
-
-  const AddItemCart = id => {
-    dispatch(addProduct(id));
-  }
-
-  const RemoveItemCart = id => {
-    dispatch(removeProduct(id));
-  } 
-
+function ShoppingPage({products, AddItemCart, RemoveItemCart}) {
+  
   //TODO: 20 ~ 24 : sounds like they are components themselves! be careful using Capital case
   //use lower case instead 
   //TIPS FROM JOEL: object.entries() can unpack product id key & value

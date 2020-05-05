@@ -2,10 +2,10 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./ItemCard.css"
 
-function ItemCard({ id,
+function CartItemCard({ id,
   name,
   price,
-  description,
+  count,
   image_url,
   AddItemCart,
   RemoveItemCart }) {
@@ -24,9 +24,11 @@ function ItemCard({ id,
         <img alt={name} src={image_url}></img>
         <div>
           ${price}
+          <br/>
+          Amount Selected: {count}
           <div>
             <button className="addButton" name={id} onClick={handleAddItem}>
-              Add To Cart
+              Add More To Cart
             </button>
             <button name={id} onClick={handleRemoveItem}>
               Remove From Cart
@@ -38,4 +40,4 @@ function ItemCard({ id,
   )
 }
 
-export default ItemCard;
+export default CartItemCard;
