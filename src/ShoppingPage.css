@@ -1,0 +1,16 @@
+body {
+  background-color: #82B1CB;
+}
+
+h1 {
+  color: #f2f7f9;
+}
+
+.titleArea{
+  border:solid;
+  border-width: 10px;
+  border-color: #828dcb	;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}

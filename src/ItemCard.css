@@ -1,0 +1,35 @@
+
+.itemCard {
+  text-align: middle;
+  border-style: solid;
+  width: 50%;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  border-color: #1a2328;
+  border-radius: 15px;
+  background-color: #f2f7f9;
+}
+
+img {
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  height: 80%;
+
+}
+.addButton {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+button {
+  background-color:	#828dcb;
+  color: #f2f7f9;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 5px;
+}
